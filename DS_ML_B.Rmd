@@ -1,0 +1,574 @@
+---
+title: "Udemy"
+author: "Shorful Alam Akib"
+date: "2025-04-03"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+myd <- read.csv(file.choose())
+library(ggplot2)
+
+ggplot(data = myd[myd$carat<2.5,], aes(x=carat,y=price, colour = clarity )) + geom_point(alpha=0.1) + geom_smooth()
+```
+
+```{r}
+temp <- c(32,35,34,38,41,40,23)
+day <- c('sat','Sun', 'Mon','Tue','Wed','Thu','Fri')
+weath <- cbind(temp,day)
+weath
+
+da <- data.frame(day,temp)
+da
+
+names(temp) <- c('sat','Sun', 'Mon','Tue','Wed','Thu','Fri')
+names(temp) <- day
+temp
+
+```
+```{r}
+v1 <- c(1,3,4,5,5,4,3,6.8)
+v1[c(1,8)]
+v2 <- c('a','b','c','d','e','f','g','h')
+names(v1) <- v2
+v1
+#
+v1['d']
+v1[c('b','f','a')]
+#
+v1[v1>4]
+
+```
+```{r}
+#Matrix
+goog <- c(1,2,3,4)
+ms <- c(3,6,9,1)
+
+comb <- c(goog,ms)
+comb.matrix <- matrix(comb,byrow = T,nrow = 2)
+comb.matrix
+
+colnames(comb.matrix) <- c('goog1','goog2','goog3','goog4')
+rownames(comb.matrix) <- c('ms1','ms2')
+
+comb.matrix
+
+##True matrix multification
+matr <- matrix(1:25,byrow = T,nrow = 5)
+matr %*% matr
+
+colSums(comb.matrix)
+rowMeans(comb.matrix)
+```
+```{r}
+animal <- c('c','d','d','c','c')
+id <- c(1,2,3,4,5)
+
+factor(animal)
+
+temps <- c('Normal','Hot','Hot','Cold','Normal','Hot','Hot','Cold')
+
+fac_temp <- factor(temps, ordered = T,levels = c('Cold','Normal','Hot'))
+#fac_tem <- factor(temps,ordered =T, levels = c('Hot','Normal','Cold'))
+fac_temp
+
+ran <- floor(runif(20,min = 1,max = 100))
+matrix(ran,5)
+```
+```{r}
+days <- c('M','T','W','T')
+tem <- c(20,30.2,23.4,26)
+rain <- c(T,F,T,T)
+
+df <- data.frame(days,tem,rain)
+df
+df[c(1,3),c('days','rain')]
+
+subset(df,subset = rain==T)
+subset(df,subset = tem>23)
+
+sorted.temp <- order(df$tem)
+#sorted.temp <- order(df['tem'])
+sorted.temp
+df[sorted.temp,]
+
+desc.temp <- order(-df$tem)
+desc.temp
+df[desc.temp,]
+```
+
+
+```{r}
+c1 <- 1:10
+c2 <- letters[1:10]
+c1
+c2
+df <- data.frame(Id = c1, Character = c2)
+df
+df2 <- c(11,'x')
+#adding rows>> df2 <- data.frame(Id=11,character=x)
+df3 <- rbind(df,df2)
+df3
+#adding Column
+df$newcol <- c(11:20)
+df$newcol2 <- 2*df$Id
+df
+#referencing cells 
+df[[8,2]]
+df[[2,'Character']] <- 99
+df[1,'Character'] <- 999
+df
+
+colnames(df)
+rownames(df)
+
+colnames(df)[-1] <- 'ID'
+df
+colnames(df)[2:4] <- c('Char','NewC','ID*2')
+df
+
+```
+```{r}
+mtcars
+head(mtcars[,c('mpg','cyl')])
+
+mtcars[mtcars$mpg > 20,]
+mtcars[mtcars$mpg > 20 & mtcars$cyl==6,c('mpg','cyl','wt')]
+subset(mtcars, mpg>20 & cyl==6)
+
+```
+```{r}
+#dealing missing data
+any(is.na(mtcars))
+sapply(mtcars, function(x){sum(is.na(x))})
+df[is.na(df)] <- 99
+mtcars$mpg[is.na(mtcars$mpg)] <- mean(mtcars$mpg)
+```
+
+```{r}
+#exercise
+name <- letters[1:4]
+age <- c(12,21,14,16)
+weight <- 32:35
+sex <- c('F','M','M','F')
+
+df <- data.frame(row.names = name,age,weight,sex)
+rownames(df) <- letters[4:7]
+df
+```
+```{r}
+v <- c(1,2,3,4)
+mat <- matrix(1:10,nrow = 2)
+df <- iris
+
+mylist <- list(v,mat,df)
+mylist
+
+my.named.list <- list(vector = v,matrix= mat, data.frame=df)
+my.named.list
+
+double.list <- c(my.named.list,mylist)
+double.list
+```
+
+```{r}
+##Excel##SQL
+#install.packages('xlsx')
+library(readxl)
+library(xlsx)
+getwd()
+write.csv(mtcars, file = 'mtcars.csv')
+read_excel()
+install.packages('RODBC')
+library(RODBC)
+library(RMySQL)
+library(DBI)
+#install.packages('RMariaDB')
+library(RMariaDB)
+?RMariaDB
+```
+```{r}
+x <- 0
+while (x<10){
+  print(paste0('x is: ',x))
+  x <- x+1
+  if (x==5){
+    print('X is equal 5. Now break the loop!')
+    break #break is in the if statement still it break the while loop!
+  }
+}
+
+my.list <- list(c(1,2,3),mtcars,13)
+
+for (x in my.list){
+  print(x)
+}
+
+mat <- matrix(1:25,nrow = 5,byrow = T)
+for (x in mat){
+  print(x)
+}
+
+for (row in 1:nrow(mat)){
+  for (col in 1:ncol(mat)){
+    print(paste('The elements at row:',row,'and column:',col,'is',mat[row,col]))
+  }
+}
+
+num_check <- function(num,v){
+  for (x in v){
+    if (x==num){
+      return(TRUE)
+    }
+  }
+  return(FALSE)
+}
+
+num_check(1,c(2,3,4))
+
+bar_count <- function(pack){
+  amount.of.ones <- pack %%5
+  amount.of.fives <- (pack-amount.of.ones)/5
+  print(paste('You will need:',amount.of.fives, '5kg bars and',amount.of.ones,'1kg bars'))
+  return(amount.of.fives+amount.of.ones)
+}
+bar_count(19)
+
+
+summ <- function(a,b,c){
+  vec <- c()
+  if (a%%3!=0){
+    vec <- append(a,vec)
+  }  
+  if (b%%3!=0){
+    vec <- append(b,vec)
+  }
+    if (c%%3!=0){
+    vec <- append(c,vec)
+    }
+  sum(vec)
+}
+summ(1,2,6)
+
+
+is_prime <- function(num){
+  if (num <= 1){
+    return(FALSE)
+  } else if (num == 2){
+    return(TRUE)
+  } else if (num %% 2 == 0){
+    return(FALSE)
+  } else {
+    for (x in 2:floor(sqrt(num))){
+      if (num %% x == 0){
+        return(FALSE)
+      }
+    }
+  }
+  return(TRUE)
+}
+
+is_prime(6)
+
+print(is_prime(5))
+```
+
+```{r}
+print(sample(x=1:100,5))
+print(sample(100:200,5))
+```
+
+```{r}
+#lapply return list sapply return vector
+help(sapply)
+#Anonymous Function 
+v <- 1:5
+rsu <- sapply(v,function(x){x**v})
+print(rsu)
+
+add_number <- function(num,choice){
+  return(num+choice)
+}
+
+print(sapply(v,add_number))#no value for choice
+print(sapply(v,add_number,choice=100))
+
+```
+```{r}
+abs(-2)#absolute value
+##Regular expression
+#certain terms / pattern searching 1.grepl 2. grep - general regula expresion
+text <- "Hey, Don't forget Allah is watching"
+grepl('Allah',text)
+
+v <- c('a','b','c','d','c')
+grepl('c',v)
+
+grep('c',v)
+```
+```{r}
+Sys.Date()
+
+d <- '1998-08-28'
+class(d)
+dd <- as.Date(d)
+class(dd)
+# %d Day of the month(decimal number)
+# %m Month (decimal number)
+# %b Month (abbreviated)
+# %B Month (full name)
+# %y Year (2 digit)
+# %Y Year (4 digit)
+dte <- as.Date("Apr-12-97",format='%b-%d-%y')
+dte
+as.Date('May,27,1994',format = '%B,%d,%Y')
+#Time stamps
+as.POSIXct('10:15:30',format='%H:%M:%S') #portable operating system interface
+##########################
+help(strptime)
+strptime('10:15:30',format='%H:%M:%S')
+strptime('May,27,1994',format = '%B,%d,%Y')
+
+```
+```{r}
+#install.packages('nycflights13')
+library(dplyr)
+library(nycflights13)
+
+head(flights)
+summary(flights)
+str(flights)
+
+filter() (and slice())
+arrange()
+select() (and rename())
+distinct()
+mutate() (and transmute())
+summarise()
+sample_n() and sample_frac()
+
+#filter
+head(filter(flights,month==11,day==3,carrier=='AA'))
+head(flights[flights$month==11 & flights$day==3 & flights$carrier=='AA',])
+
+#slice is going to allows us to select rows by position 
+slice(flights,10:13)
+#
+head(arrange(flights,year,month,day,arr_time))
+head(arrange(flights,year,month,day,desc(arr_time)))
+
+#
+head(select(flights,carrier))
+head(select(flights,carrier,arr_time))
+select(flights,carrier)
+#select(flights$carrier)
+# Rename
+head(rename(flights,airline_carrier = carrier))
+
+names(flights)[names(flights)=='carrier'] <- 'airline_carrier'
+head(select(flights,airline_carrier))
+head(select(flights,carrier))
+flights <- flights %>% rename( carrier = airline_carrier)
+
+head(flights)
+#Distinct
+distinct(select(flights,carrier))
+distinct(select(flights,day))
+# distinct(flights$carrier) doesn't work
+distinct(flights,carrier)
+distinct(flights,day)
+distinct(flights,carrier,day)
+
+
+```
+
+```{r}
+##Mutate - create new column with function of existing column
+flights <- mutate(flights,new_col = arr_delay-dep_delay)
+head(flights)
+
+flights$new_col2 <- flights$new_col*2
+head(flights)
+#remove col
+flights <- flights %>% select(-new_col)
+flights$new_col2 <- NULL
+colnames(flights)
+
+#if you wants only the new columns that you have created
+head(transmute(flights, new_col = arr_delay*dep_delay))
+##################
+summarise(flights,average_air_time = mean(air_time,na.rm=T))
+mean(flights$air_time,na.rm = T)
+library(dplyr)
+
+flights %>% summarise(
+  sum_air_time = sum(air_time,na.rm = T),
+  mean_arr_time =mean(arr_time,na.rm = T),
+  mean_delay_time = mean(arr_delay,na.rm = T),
+  sd_air_time = sd(air_time,na.rm = T),
+  max_distance = max(distance,na.rm = T)
+  
+)
+
+sapply(flights[,c('distance','air_time','arr_delay')], mean,na.rm=T)
+
+sapply(flights[,c('distance','air_time','arr_delay')], function(x){c(mean(x,na.rm=T),sd(x,na.rm = T))})
+###sample_n  allow you to take a random number of rows 
+sample_n(flights,9)
+#
+sample_frac(flights,.25) #25% of data
+
+```
+```{r}
+
+arrange(sample_n(filter(mtcars,mpg>20),5),desc(mpg))
+
+mtcars %>%filter(mpg>20) %>% sample_n(size = 7) %>% arrange(desc(mpg))
+```
+```{r}
+library(dplyr)
+filter(mtcars,mpg>20,cyl==6)
+
+arrange(mtcars,cyl,desc(wt))
+
+select(mtcars,mpg,hp)
+
+distinct(mtcars,gear)
+distinct(select(mtcars,gear))
+
+mtcars$Performance <- mtcars$hp/mtcars$wt
+mtcars <- mutate(mtcars, Performance2 = hp/wt)
+head(mtcars)
+
+mtcars$Performance <- NULL
+mtcars <- mtcars %>% select(-Performance2)
+head(mtcars)
+
+mtcars %>% filter(cyl==6) %>%  summarise(avg_mpg = mean(mpg))
+
+```
+#........................tidyr
+```{r}
+library(tidyr)
+library(data.table)
+# gather()  collapse multiple columns to key pair values 
+comp <- c(1,1,1,2,2,2,3,3,3)
+yr <- c(1998,1999,2000,1998,1999,2000,1998,1999,2000)
+q1 <- runif(9, min=0, max=100)
+q2 <- runif(9, min=0, max=100)
+q3 <- runif(9, min=0, max=100)
+q4 <- runif(9, min=0, max=100)
+
+df <- data.frame(comp=comp,year=yr,Qtr1 = q1,Qtr2 = q2,Qtr3 = q3,Qtr4 = q4)
+
+gather(df,Quarter,Revenue,Qtr1:Qtr4)
+df %>% gather(Quarter,Revenue,Qtr1:Qtr4)
+
+#spread()
+stocks <- data.frame(
+  time = as.Date('2009-01-01') + 0:9,
+  X = rnorm(10, 0, 1),
+  Y = rnorm(10, 0, 2),
+  Z = rnorm(10, 0, 4)
+)
+stocks
+
+stock.gathered <- stocks %>% gather(stock,price,X,Y,Z)
+head(stock.gathered)
+
+stock.gathered %>% spread(stock,price)
+spread(stock.gathered,stock,price)
+
+head(mtcars)
+str(mtcars)
+levels(mtcars$gear)
+mtcars$gear <- as.factor(mtcars$gear)
+mtcars$cyl <- as.factor(mtcars$cyl)
+levels(mtcars$cyl)
+mtcars %>%  spread(cyl,disp)
+```
+```{r}
+#separate
+df <- data.frame(new_col=c(NA,'a.x','b.y','c.z'))
+df
+separate(df,new_col,c('abc','xyz'))
+
+df <- data.frame(new_col=c(NA,'a-x','b-y','c-z'))
+separate(df,new_col,c('ab','xy'),sep = '-')
+#Unite
+df.sep <- separate(df,new_col,c('ab','xy'),sep = '-')
+unite(df.sep,joint_col,ab,xy,sep = '___')
+```
+
+```{r}
+library(ggplot2)
+#install.packages('ggplot2movies')
+library(ggplot2movies)
+head(movies)
+colnames(movies)
+
+pl <- ggplot(movies,aes(x=rating))
+                                                   
+pl + geom_histogram(binwidth = 0.1,color='darkgreen',fill='#f7efc5',alpha=0.6)+xlab('Movie Rating') +ylab('Number of movies') +ggtitle('Distribution of ratings')
+
+plo <- ggplot(movies,aes(x=rating))+ geom_histogram(binwidth = 0.1,aes(fill=..count..))
+plo
+
+```
+```{r}
+ggplot(mtcars,aes(x=wt,y=mpg))+geom_point(aes(color=hp),size=5)+scale_color_gradient(low = 'blue',high = 'red')
+```
+```{r}
+ggplot(mtcars,aes(x=factor(cyl),y=mpg))+geom_boxplot()+coord_flip()+geom_jitter()
+
+```
+
+```{r}
+ggplot(mpg,aes(x=displ,y=hwy))+geom_point() + coord_cartesian(xlim = c(3,6),ylim = c(15,35)) 
+
+ggplot(mpg,aes(x=displ,y=hwy))+geom_point() +  coord_fixed(ratio = 1/3)
+```
+```{r}
+ggplot(mpg,aes(x=displ,y=hwy))+geom_point()+facet_grid(.~cyl)
+head(mpg)
+ggplot(mpg,aes(x=displ,y=hwy))+geom_point()+facet_grid(drv~.)
+install.packages('ggthemes')
+library(ggthemes)
+```
+
+```{r}
+eco <- read.csv(file.choose())
+head(eco)
+str(eco)
+eco$Region <- as.factor(eco$Region)
+levels(eco$Region)
+pointsToLabel <- c("Russia", "Venezuela", "Iraq", "Myanmar", "Sudan",
+                   "Afghanistan", "Congo", "Greece", "Argentina", "Brazil",
+                   "India", "Italy", "China", "South Africa", "Spane",
+                   "Botswana", "Cape Verde", "Bhutan", "Rwanda", "France",
+                   "United States", "Germany", "Britain", "Barbados", "Norway", "Japan",
+                   "New Zealand", "Singapore")
+library(ggthemes)
+library(ggplot2)
+ggplot(eco,aes(x=CPI,y=HDI,color=Region))+ 
+  geom_point(shape=1) + xlab('Corruption Perceptions Index')+ylab('Human development index')+
+  geom_smooth(aes(group=1),method = 'lm',formula = y~log(x),se=F,color='red')+
+  geom_text(aes(label = Country), color = "gray20", 
+                data = subset(eco, Country %in% pointsToLabel),check_overlap = TRUE)+
+  theme_economist_white()+scale_x_continuous(limits=c(.9,10.5),breaks = 1:10)+
+  theme(axis.title.x = element_text(color = 'darkgreen',size=15),
+        axis.title.y = element_text(color = 'darkgreen',size=15))
+
+```
+
+```{r}
+#install.packages('plotly')
+library(plotly)
+ggplo <- ggplot(mtcars,aes(mpg,wt))+geom_point()
+gplotly <- ggplotly(ggplo)
+print(gplotly)
+```
+

@@ -34,4 +34,4 @@ Programming exercises and capstone projects to test understanding of machine lea
 Practice file:<br>
 🔗 You can view the rendered HTML files here:  <br>
 👉 [1.-Basic-of-R-and-data-type.html](https://shorful-akib.github.io/Data-Science-and-Machine-Learning-Bootcamp-with-R-By-Jose-Portilla/1.-Basic-of-R-and-data-type.html)<br>
-👉 [1.-Basic-of-R-and-data-type.html](https://shorful-akib.github.io/Data-Science-and-Machine-Learning-Bootcamp-with-R-By-Jose-Portilla/2.-Data-manipulation-with-R.html)<br>
+👉 [2.-Data-manipulation-with-R.html](https://shorful-akib.github.io/Data-Science-and-Machine-Learning-Bootcamp-with-R-By-Jose-Portilla/2.-Data-manipulation-with-R.html)<br>

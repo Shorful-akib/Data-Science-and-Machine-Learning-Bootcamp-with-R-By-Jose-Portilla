@@ -7,8 +7,7 @@ Overview of Data Science<br>
 Best Practices for studying the course<br>
 Installation setup for different operating systems (Windows, Mac, Linux)<br><br>
 Basics of R Programming:<br><br>
-🔗 You can view the rendered HTML file here:  
-👉 [1.-Basic-of-R-and-data-type.html](https://shorful-akib.github.io/Data-Science-and-Machine-Learning-Bootcamp-with-R-By-Jose-Portilla/1.-Basic-of-R-and-data-type.html)
+
 
 Learning R essentials: Vectors, Matrices, Data Frames, and Lists<br>
 Control structures: Logical operators, If-Else statements, loops (for and while) and function creation<br><br>
@@ -32,3 +31,6 @@ Random Forests<br>
 Support Vector Machines<br>
 Advanced topics like reinforcement learning and neural networks<br>
 Programming exercises and capstone projects to test understanding of machine learning concepts<br><br>
+Practice file:<br>
+🔗 You can view the rendered HTML files here:  <br>
+👉 [1.-Basic-of-R-and-data-type.html](https://shorful-akib.github.io/Data-Science-and-Machine-Learning-Bootcamp-with-R-By-Jose-Portilla/1.-Basic-of-R-and-data-type.html)<br>

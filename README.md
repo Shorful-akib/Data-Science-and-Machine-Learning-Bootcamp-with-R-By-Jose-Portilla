@@ -15,7 +15,7 @@ Data Input and Output:<br>
 
 Reading data from various file formats (CSV, Excel, SQL)<br>
 Web scraping techniques to gather data online<br><br>
-Data Visualization:<br>
+Data Visualisation:<br>
 
 Techniques and libraries for data visualization in R (specific libraries are covered in detail)<br><br>
 Data Manipulation:<br>

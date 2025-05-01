@@ -33,6 +33,7 @@ Advanced topics like reinforcement learning and neural networks<br>
 Programming exercises and capstone projects to test understanding of machine learning concepts<br><br>
 Practice file:<br>
 🔗 You can view the rendered HTML files here:  <br>
+👉 [Basic-Programming.html](https://shorful-akib.github.io/Data-Science-and-Machine-Learning-Bootcamp-with-R-By-Jose-Portilla/Basic-Programming.html)<br>
 👉 [1.-Basic-of-R-and-data-type.html](https://shorful-akib.github.io/Data-Science-and-Machine-Learning-Bootcamp-with-R-By-Jose-Portilla/1.-Basic-of-R-and-data-type.html)<br>
 👉 [2.-Data-manipulation-with-R.html](https://shorful-akib.github.io/Data-Science-and-Machine-Learning-Bootcamp-with-R-By-Jose-Portilla/2.-Data-manipulation-with-R.html)<br>
 👉 [3.-Data-visualization-with-ggplot2.html](https://shorful-akib.github.io/Data-Science-and-Machine-Learning-Bootcamp-with-R-By-Jose-Portilla/3.-Data-visualization-with-ggplot2.html)<br>

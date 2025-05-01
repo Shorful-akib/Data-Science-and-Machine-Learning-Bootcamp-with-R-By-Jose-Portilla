@@ -31,7 +31,7 @@ Random Forests<br>
 Support Vector Machines<br>
 Advanced topics like reinforcement learning and neural networks<br>
 Programming exercises and capstone projects to test understanding of machine learning concepts<br><br>
-Practice file:<br>
+Practice file: <br>
 🔗 You can view the rendered HTML files here:  <br>
 👉 [Basic-Programming.html](https://shorful-akib.github.io/Data-Science-and-Machine-Learning-Bootcamp-with-R-By-Jose-Portilla/Basic-Programming.html)<br>
 👉 [1.-Basic-of-R-and-data-type.html](https://shorful-akib.github.io/Data-Science-and-Machine-Learning-Bootcamp-with-R-By-Jose-Portilla/1.-Basic-of-R-and-data-type.html)<br>

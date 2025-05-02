@@ -1,7 +1,8 @@
 # Data-Science-and-Machine-Learning-Bootcamp-with-R-By-Jose-Portilla <br> <br>
 The course "Data Science and Machine Learning Bootcamp with R" is structured as follows:<br><br>
 
-Course Introduction:<br><br>
+Course Introduction:<br>
+<br>
 
 Overview of Data Science<br>
 Best Practices for studying the course<br>

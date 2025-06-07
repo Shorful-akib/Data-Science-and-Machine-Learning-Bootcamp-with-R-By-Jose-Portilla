@@ -39,6 +39,6 @@ Practice file: <br>
 👉 [2.-Data-manipulation-with-R.html](https://shorful-akib.github.io/Data-Science-and-Machine-Learning-Bootcamp-with-R-By-Jose-Portilla/2.-Data-manipulation-with-R.html)<br>
 👉 [3.-Data-visualization-with-ggplot2.html](https://shorful-akib.github.io/Data-Science-and-Machine-Learning-Bootcamp-with-R-By-Jose-Portilla/3.-Data-visualization-with-ggplot2.html)<br>
 👉 [4.-Advance-programming-with-R.html](https://shorful-akib.github.io/Data-Science-and-Machine-Learning-Bootcamp-with-R-By-Jose-Portilla/4.-Advance-programming-with-R.html)<br>
-👉 [5.-Machine-learning-models-part-1.html](https://shorful-akib.github.io/Data-Science-and-Machine-Learning-Bootcamp-with-R-By-Jose-Portilla/5.-Machine-learning-models-part-1.html)<br>
-👉 [6.-Machine-learning-models-part-2.html](https://shorful-akib.github.io/Data-Science-and-Machine-Learning-Bootcamp-with-R-By-Jose-Portilla/6.-Machine-learning-models-part-2.html)<br>
-👉 [7.-Machine-Learning-models-part-3.html](https://shorful-akib.github.io/Data-Science-and-Machine-Learning-Bootcamp-with-R-By-Jose-Portilla/7.-Machine-Learning-models-part-3.html)<br>
+👉 [5.-ML-Linear-Logistic-Regression-Model.html](https://shorful-akib.github.io/Data-Science-and-Machine-Learning-Bootcamp-with-R-By-Jose-Portilla/5.-Machine-learning-models-part-1.html)<br>
+👉 [6.-Decision_Trees-Random_Forests-Support_Vector_Machines_(SVM).html](https://shorful-akib.github.io/Data-Science-and-Machine-Learning-Bootcamp-with-R-By-Jose-Portilla/6.-Machine-learning-models-part-2.html)<br>
+👉 [7.-K-Nearest_Neighbors-K-means_Clustering.html](https://shorful-akib.github.io/Data-Science-and-Machine-Learning-Bootcamp-with-R-By-Jose-Portilla/7.-Machine-Learning-models-part-3.html)<br>
